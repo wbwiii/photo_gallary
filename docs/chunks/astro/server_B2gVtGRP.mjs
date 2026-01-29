@@ -1845,4 +1845,4 @@ function normalizeProps(props) {
 "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_".split("").reduce((v, c) => (v[c.charCodeAt(0)] = c, v), []);
 "-0123456789_".split("").reduce((v, c) => (v[c.charCodeAt(0)] = c, v), []);
 
-export { NOOP_MIDDLEWARE_HEADER as N, renderTemplate as a, addAttribute as b, createComponent as c, createAstro as d, renderHead as e, renderSlot as f, decodeKey as g, maybeRenderHead as m, renderComponent as r };
+export { NOOP_MIDDLEWARE_HEADER as N, createAstro as a, renderTemplate as b, createComponent as c, addAttribute as d, renderHead as e, renderSlot as f, decodeKey as g, maybeRenderHead as m, renderComponent as r };
