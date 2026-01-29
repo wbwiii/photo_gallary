@@ -1,0 +1,25 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import photos from "../../data/photos.json";
+
+const sorted = [...photos].sort((a,b)=> (a.date < b.date ? 1 : -1));
+---
+
+<SiteLayout title="Timeline — Will’s Photos">
+  <h1>Timeline</h1>
+
+  <div style="display:grid; gap:14px;">
+    {sorted.map((p) => (
+      <div style="display:flex; gap:14px; align-items:center; border:1px solid rgba(0,0,0,.08); border-radius:14px; overflow:hidden;">
+        <img src={p.urls.thumb} alt={p.title} style="width:220px; height:140px; object-fit:cover; display:block;" />
+        <div style="padding:12px;">
+          <div style="opacity:.7; font-size:14px;">{p.date} • {p.locationLabel}</div>
+          <div style="font-size:18px; font-weight:800;">
+            <a href={`/photo/${p.id}/`} style="text-decoration:none; color:inherit;">{p.title}</a>
+          </div>
+          <div style="opacity:.85;">{p.description}</div>
+        </div>
+      </div>
+    ))}
+  </div>
+</SiteLayout>

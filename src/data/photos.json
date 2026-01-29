@@ -1,0 +1,44 @@
+[
+  {
+    "id": "sample-iceland-001",
+    "title": "Black sand coast",
+    "description": "Windy afternoon on the southern coast.",
+    "country": "iceland",
+    "region": "south",
+    "locationLabel": "Iceland — South Coast",
+    "date": "2024-09-12",
+    "urls": {
+      "thumb": "https://picsum.photos/id/1011/600/400",
+      "web": "https://picsum.photos/id/1011/1600/1067"
+    },
+    "featured": true
+  },
+  {
+    "id": "sample-usa-ca-001",
+    "title": "California light",
+    "description": "Golden hour on the trail.",
+    "country": "usa",
+    "region": "california",
+    "locationLabel": "USA — California",
+    "date": "2023-05-03",
+    "urls": {
+      "thumb": "https://picsum.photos/id/1025/600/400",
+      "web": "https://picsum.photos/id/1025/1600/1067"
+    },
+    "featured": true
+  },
+  {
+    "id": "sample-usa-ut-001",
+    "title": "Desert lines",
+    "description": "Ridge patterns near sunset.",
+    "country": "usa",
+    "region": "utah",
+    "locationLabel": "USA — Utah",
+    "date": "2022-10-18",
+    "urls": {
+      "thumb": "https://picsum.photos/id/1039/600/400",
+      "web": "https://picsum.photos/id/1039/1600/1067"
+    },
+    "featured": false
+  }
+]

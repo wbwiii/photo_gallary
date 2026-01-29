@@ -1,0 +1,23 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import photos from "../../data/photos.json";
+
+const groups = new Map();
+for (const p of photos) {
+  const key = `${p.country}/${p.region}`;
+  if (!groups.has(key)) groups.set(key, { country: p.country, region: p.region, label: p.locationLabel, count: 0 });
+  groups.get(key).count += 1;
+}
+const locations = Array.from(groups.values()).sort((a,b)=> (a.label > b.label ? 1 : -1));
+---
+
+<SiteLayout title="Locations — Will’s Photos">
+  <h1>Locations</h1>
+  <ul>
+    {locations.map((l) => (
+      <li>
+        <a href={`/locations/${l.country}/${l.region}/`}>{l.label}</a> ({l.count})
+      </li>
+    ))}
+  </ul>
+</SiteLayout>

@@ -1,0 +1,25 @@
+---
+import SiteLayout from "../../../layouts/SiteLayout.astro";
+import photos from "../../../data/photos.json";
+
+const { id } = Astro.params;
+const photo = photos.find((p) => p.id === id);
+
+if (!photo) {
+  throw new Error(`Photo not found: ${id}`);
+}
+---
+
+<SiteLayout title={`${photo.title} — Will’s Photos`}>
+  <div style="display:grid; gap:14px;">
+    <div style="border-radius:18px; overflow:hidden;">
+      <img src={photo.urls.web} alt={photo.title} style="width:100%; max-height:70vh; object-fit:cover; display:block;" />
+    </div>
+
+    <h1 style="margin:0;">{photo.title}</h1>
+    <div style="opacity:.7;">{photo.locationLabel} • {photo.date}</div>
+    <p style="max-width:70ch; line-height:1.6;">{photo.description}</p>
+
+    <a href={`/locations/${photo.country}/${photo.region}/`}>← Back to {photo.locationLabel}</a>
+  </div>
+</SiteLayout>
