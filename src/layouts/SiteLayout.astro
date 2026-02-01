@@ -14,10 +14,10 @@ const { title = "Will’s Photos" } = Astro.props;
   <body>
     <header class="header">
       <div class="header-inner">
-        <a class="brand" href={`${import.meta.env.BASE_URL}`}>Will’s Photos</a>
+        <a class="brand" href={`${import.meta.env.BASE_URL}/`}>Will’s Photos</a>
         <nav class="nav">
-          <a href={`${import.meta.env.BASE_URL}locations/`}>Locations</a>
-          <a href={`${import.meta.env.BASE_URL}timeline/`}>Timeline</a>
+          <a href={`${import.meta.env.BASE_URL}/locations/`}>Locations</a>
+          <a href={`${import.meta.env.BASE_URL}/timeline/`}>Timeline</a>
         </nav>
       </div>
     </header>
