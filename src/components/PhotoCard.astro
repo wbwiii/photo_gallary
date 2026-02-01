@@ -1,0 +1,11 @@
+---
+const { photo } = Astro.props;
+---
+
+<a class="card" href={`${import.meta.env.BASE_URL}photo/${photo.id}/`}>
+  <img src={photo.urls.thumb} alt={photo.title} loading="lazy" />
+  <div class="card-body">
+    <p class="card-title">{photo.title}</p>
+    <p class="card-meta">{photo.locationLabel} • {photo.date}</p>
+  </div>
+</a>

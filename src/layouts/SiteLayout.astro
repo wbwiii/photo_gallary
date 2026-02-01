@@ -1,5 +1,6 @@
 ---
-const { title = "Photo Gallery" } = Astro.props;
+import "../styles/global.css";
+const { title = "Will’s Photos" } = Astro.props;
 ---
 
 <!doctype html>
@@ -10,20 +11,22 @@ const { title = "Photo Gallery" } = Astro.props;
     <title>{title}</title>
   </head>
 
-  <body style="margin:0; font-family: system-ui;">
-    <header style="padding:18px 24px; display:flex; gap:18px; align-items:center; border-bottom:1px solid rgba(0,0,0,.08);">
-      <a href={`${Astro.site?.base ?? ""}/`} style="text-decoration:none; font-weight:700;">Will’s Photos</a>
-      <nav style="display:flex; gap:12px;">
-        <a href={`${Astro.site?.base ?? ""}/locations/`} style="text-decoration:none;">Locations</a>
-        <a href={`${Astro.site?.base ?? ""}/timeline/`} style="text-decoration:none;">Timeline</a>
-      </nav>
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <a class="brand" href={`${import.meta.env.BASE_URL}`}>Will’s Photos</a>
+        <nav class="nav">
+          <a href={`${import.meta.env.BASE_URL}locations/`}>Locations</a>
+          <a href={`${import.meta.env.BASE_URL}timeline/`}>Timeline</a>
+        </nav>
+      </div>
     </header>
 
-    <main style="padding:24px; max-width:1100px; margin:0 auto;">
+    <main class="container">
       <slot />
     </main>
 
-    <footer style="padding:24px; opacity:.7; font-size:14px;">
+    <footer class="footer">
       © {new Date().getFullYear()} Will Williams
     </footer>
   </body>
